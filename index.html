@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
@@ -557,10 +557,7 @@ p{max-width:60ch}
     const saved = localStorage.getItem('lang');
     lang = LANGS.includes(q) ? q : LANGS.includes(saved) ? saved : '';
   } catch (e) { lang = ''; }
-  if (!lang) {
-    const n = (navigator.language || 'en').slice(0, 2).toLowerCase();
-    lang = LANGS.includes(n) ? n : 'en';
-  }
+  if (!lang) lang = 'fr'; // default language: French
   const idx = { en: 0, fr: 1, ar: 2 }[lang];
   const tr = k => (T[k] ? (idx === 0 ? k : T[k][idx - 1]) : k);
   window.I18N = { lang, t: tr };
